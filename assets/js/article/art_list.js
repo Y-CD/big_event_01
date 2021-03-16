@@ -12,7 +12,7 @@ $(function () {
         let mm = padZero(dt.getMinutes());
         let ss = padZero(dt.getSeconds());
 
-        return y + '-' + m + '-' + d + '' + hh + ':' + mm + ':' + ss;
+        return y + '-' + m + '-' + d + '-' + hh + ':' + mm + ':' + ss;
 
     }
 
