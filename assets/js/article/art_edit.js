@@ -84,6 +84,31 @@ $(function () {
         state = "草稿";
     });
 
+    // 点击按钮 选择图片
+    $("#btnChooseImage").on("click", function () {
+        $("#coverFile").click();
+    });
+
+    // 设置图片
+    $("#coverFile").change(function (e) {
+        // 拿到用户选择的图片
+        let file = e.target.files[0];
+        // 非空校验
+        if (file == undefined) {
+            return layer.msg("请选择图片！");
+        }
+
+        // 根据选择的文件 创建一个对应的URL地址
+        let newURL = URL.createObjectURL(file);
+
+        // 先销毁之前的区域  在重新设置图片路径 之后再创建新的裁剪区域
+        $image
+            .cropper('destroy') // 销毁旧的裁剪区域
+            .attr('src', newImgURL) // 重新设置图片路径
+            .cropper(options) // 重新初始化裁剪区域
+
+    });
+
     // 修改文章
     $("#form-pub").on("submit", function (e) {
         e.preventDefault();
