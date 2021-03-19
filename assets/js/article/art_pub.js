@@ -63,7 +63,7 @@ $(function () {
         // 先销毁之前的区域  在重新设置图片路径 之后再创建新的裁剪区域
         $image
             .cropper('destroy') // 销毁旧的裁剪区域
-            .attr('src', newImgURL) // 重新设置图片路径
+            .attr('src', newURL) // 重新设置图片路径
             .cropper(options) // 重新初始化裁剪区域
 
     });
